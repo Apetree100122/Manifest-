@@ -1,0 +1,698 @@
+<?xml version="1.0" 
+encoding="utf-8"?><manifest 
+xmlns:android="http://schemas.android.com
+/apk/res/android" android:UserId="android.uid.system"
+android:versionCode="34" android:versionName="14"
+compile |SdkVersion="34"
+compile |SdkVersionCodename="14"
+package="com.sec.android.app.factorykeystring"
+platform Build Version Code="34"
+platformBuildVersionName="14"><uses-sdk
+android:minSdkVersion="34"
+android:targetSdkVersion="34"/><permission
+android:name="com.sec.android.app.factorymode.permission.KEYSTRING"android:protectionLevel="signature
+OrSystem"/><permission
+android:name="com.sec.android.app.phoneutil.permission.KEYSTRING"android:protectionLevel="signature
+OrSystem"/><permission
+android:name="com.sec.android.app.selftestmode.permission.KEYSTRING"
+android:protectionLevel="signature
+OrSystem"/><uses-permission android:name="android.permission.DEVICE_POWER"/><uses-permission android:name="android.permission.VIBRATE"/><uses-permission android:name="android.permission.WAKE_LOCK"/><uses-permission android:name="com.sec.android.app.factorymode.permission.KEYSTRING"/><uses-permission android:name="com.sec.android.app.DataCreate.permission.KEYSTRING"/><uses-permission android:name="com.sec.android.app.phoneutil.permission.KEYSTRING"/><uses-permission android:name="com.sec.android.app.selftestmode.permission.KEYSTRING"/><uses-permission android:name="com.sec.android.app.servicemodeapp.permission.KEYSTRING"/><uses-permission android:name="com.sec.factory.permission.KEYSTRING"/><uses-permission android:name="com.sec.modem.settings.permission.KEYSTRING"/><uses-permission android:name="com.sec.testingsettings.permission.KEYSTRING"/><uses-permission android:name="com.sec.permission.preconfig"/><uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/><uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/><uses-permission android:name="android.permission.READ_PHONE_STATE"/><uses-permission android:name="android.permission.WRITE_SETTINGS"/><uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/><uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/><uses-permission android:name="android.permission.REBOOT"/><uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/><uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/><uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/><uses-permission android:name="android.permission.HARDWARE_TEST"/><uses-permission android:name="android.permission.CALL_PHONE"/><uses-permission android:name="android.permission.CLEAR_APP_USER_DATA"/><uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/><uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/><uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/><uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/><uses-permission android:name="android.permission.CAMERA"/><uses-permission android:name="android.permission.BLUETOOTH"/><uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/><uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/><uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/><uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/><uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/><uses-permission android:name="com.samsung.accessory.manager.permission.AUTHENTICATION_CONTROL"/><uses-permission android:name="android.permission.sec.BARCODE_READ"/><uses-permission android:name="android.permission.WRITE_OWNER_DATA"/><uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/><uses-permission android:name="android.Manifest.permission.USE_IRIS"/><uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/><uses-permission android:name="com.samsung.android.knox.permission.KNOX_CUSTOM_SYSTEM"/><uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/><uses-permission android:name="com.samsung.android.permisson.PEN_INSERT"/><protected-broadcast android:name="com.sec.android.systemupdate.REQ_DTBO_CLEAR"/><protected-broadcast android:name="com.sec.android.systemupdate.REQ_SENSORHUB_CLEAR"/><permission
+android:name="com.sec.android.app.factorykeystring.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+android:protectionLevel="signature"/><uses-permission android:name="com.sec.android.app.factorykeystring.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+<application
+android:label="@2131558519"
+android:name="com.sec.android.app.App"
+android:largeHeap="true"
+android:extractNativeLibs="true"
+appComponentFactory="androidx.core.app.CoreComponentFactory"
+usesNonSdkApi="true"><activity
+android:theme="@2131624208"
+android:name="com.sec.android.app.serial_number_label_Indicator.MainLabel"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/><receiver
+android:name="com.sec.android.app.serial_number_label_Indicator.MainLabelBroadcastReceiver"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false">
+<intent-filter>
+<action android:name= "com.samsung.android
+.action.SECRET_CODE"/>
+<data
+android:scheme="android_secret_code"
+android:host="737425"/>
+</intent-filter></receiver><receiver
+android:name="com.sec.android.app.status.WakeUpReceiver"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:process=":remote"><intent-filter>
+<action android:name="com.sec.android.app.status.WakeUp"/>
+</intent-filter></receiver><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.shutdown.BlockDSPAccess"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard|keyboardHidden|orientation"/><activity android:label="@2131558519"
+android:name="com.sec.android.app.shutdown.ShutdownPreference"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"/><activity
+android:label="@2131558519"
+android:name="com.sec.android.app.shutdown.Uart1KControl"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"/><receiver
+android:name="com.sec.android.app.shutdown.ShutdownSettingBroadcastReceiver"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported={}>
+<intent-filter>
+<action android:name="com.samsung.android.action.SECRET_CODE"/><data
+android:scheme="android_secret_code"
+android:host="7594"/><data
+android:scheme="android_secret_code"
+android:host="7595"/>
+</intent-filter>
+</receiver><receiver android:name="com.sec.android.app.shut
+down.OneKeyHardResetReceiver"
+android:enabled={}
+android:exported={}>
+<intent-filter><action android:name="android.intent.action.BOOT_COMPLETED"/>
+</intent-filter>
+</receiver><activity
+android:theme="@2131624203"
+android:label="@2131559067"
+android:name="com.sec.android.app.version.SimpleVersion"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><activity
+android:theme="@2131624203"
+android:label="@2131559067"
+android:name="com.sec.android.app.version.SimpleVersionTMO"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><activity android:theme="@2131624203"
+android:label="@2131558854"
+android:name="com.sec.android.app.version.MainVersion"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><activity android:theme="@2131624203"
+android:label="@2131558544"
+android:name="com.sec.android.app.version.BuildInfo"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><activity android:theme="@2131624203"
+android:label="@2131559065"android:name="com.sec.android.app.version.FTASWVersion"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"android:screenOrientation="portrait"/
+><activity android:theme="@2131624203"
+android:label="@2131559065"
+android:name="com.sec.android.app.version.FTAHWVersion"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><activity android:label="@2131559066"
+android:name="com.sec.android.app.version.HWIDInfo"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><activity android:label="@2131559064"
+android:name="com.sec.android.app.version.CpuVersion"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/
+><receiver android:name="com.sec.android.app.version.Version_Receiver"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="true">
+   <intent-filter><action android:name="com.samsung.android.action.SECRET_CODE"/><data
+android:scheme="android_secret_code"
+android:host="1234"/><data
+android:scheme="android_secret_code"
+android:host="9999"/><data
+android:scheme="android_secret_code"
+android:host="12580*369"/><data
+android:scheme="android_secret_code"
+android:host="99732"/><data
+android:scheme="android_secret_code"
+android:host="1111"/><data
+android:scheme="android_secret_code"
+android:host="2222"/><data
+android:scheme="android_secret_code"
+android:host="4943"/><data
+android:scheme="android_secret_code"
+android:host="278837"/><data
+android:scheme="android_secret_code"
+android:host="0000"/></intent-filter>
+</receiver><activity android:label="BattType"
+android:name="com.sec.android.app.status.BattType"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported={}
+android:screenOrientation="sensor">
+<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter>
+</activity><activity android:theme="@2131624203"android:label="BatteryStatus"android:name="com.sec.android.app.status.BatteryStatus"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported={}
+android:screenOrientation="sensor"><intent-filter>
+<action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter></activity><activity android:label="BatteryStatusEng"
+android:name="com.sec.android.app.status.BatteryStatusEng"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:screenOrientation="sensor">
+<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter>
+</activity><activity
+android:label="LightsensorRead"
+android:name="com.sec.android.app.status.LightsensorRead"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false">
+<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity><activity
+android:theme="@16973831"
+android:name="com.sec.android.tspkeystring.keystring.TouchNoise"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:process="android.uid.system"
+android:screenOrientation="portrait">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter></activity><activity
+android:theme="@16973831"
+android:name="com.sec.android.tspkeystring.keystring.TouchNoiseSynaptics"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"android:screenOrientation="portrait"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter>
+</activity><activityandroid:label="HDCP_CHECK"
+android:name="com.sec.android.app.status.HdcpCheckDialog"
+android:permission="com.sec.android.app.factoymode.permission.KEYSTRING"android:exported="false"><intent-filter>
+<action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter>
+</activity><activityandroid:label="AccSensorCalibration"
+android:name="com.sec.android.app.status.AccSensorCalibration"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false">
+<intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter>
+</activity> <activity
+android:label="S-Pen detection test"
+android:name="com.sec.android.app.status.SPenDetectionTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported={}><intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter></activity><activity
+android:theme="@16973831"
+android:label="S-Pen detection test"
+android:name="com.sec.android.app.status.SPenTestUI"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter>     </activity><activityandroid:label="S-Pen detection test"android:name="com.sec.android.app.status.SPenTestMode"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter></activity><activity
+android:label="SPenTestUI"
+android:name="com.sec.android.app.status.SPen_AccuracyUI"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"android:exported="false"
+android:configChanges="keyboardHidden|orientation|screenSize">
+         <intent-filter>
+<action android:name="android.intent.action.MAIN"/> <category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity>
+<activity
+android:label="SPenTestUI"
+android:name="com.sec.android.app.status.SPen_LinearityUI"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:configChanges="keyboardHidden|orientation|screenSize">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/> 
+         </intent-filter>
+</activity>
+<activity
+android:label="SPenTestUI"
+android:name="com.sec.android.app.status.SPen_HoverAccurayUI"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:configChanges="keyboardHidden|orientation|screenSize">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity>
+<activityandroid:label="SPenTestUI"
+android:name="com.sec.android.app.status.EPenTestUI"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:configChanges="keyboardHidden|orientation|screenSize">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity>
+android:configChanges="keyboardHidden|orientation|screenSize">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity> <activityandroid:label="LcdTypeInfo"
+android:name="com.sec.android.app.status.LcdTypeInfo"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"><intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity>
+<activity
+android:label="RTCTimeRead"
+android:name="com.sec.android.app.status.RTCTimeRead"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false">
+<intent-filter>    <action android:name="android.intent.action.MAIN"/>
+
+
+
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/></intent-filter></activity><activity
+android:theme="@2131624208"
+android:label="FailHistRead"
+android:icon="@2131165295"
+android:name="com.sec.android.app.status.FailHistRead"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:screenOrientation="portrait"
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+                  </intent-filter>
+         </activity>
+    <activity
+     android:label="FailHistDetailInformation"
+android:name="com.sec.android.app.status.FailHistDetailInformation"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+    android:exported="false"
+        android:screenOrientation="portrait">
+                         <intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter>
+</activity><activityandroid:label="ABC Detail Information"
+android:name="com.sec.android.app.status.AbcDe                                 ailInformation"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:screenOrientation="portrait">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+                </intent-filter>
+            v</activity>
+          <activity
+              android:theme="@2131624206"
+android:label="Touch sensity test"
+android:name="com.sec.android.app.status.touch_                    key_sensitivity_default"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>       
+              <activity
+                 android:theme="@16973834"
+android:label="idchipnfc"
+android:name="com.sec.android.app.status.IDChipNFCTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="Touch sensity test"
+android:name="com.sec.android.tspkeystring.keystring.touch_key_sensitivity_graph"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>         
+<activity
+android:theme="@16973834"
+android:label="Touch sensity test"
+android:name="com.sec.android.tspkeystring.keystring.touch_key_sensitivity"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/><activity
+android:theme="@16973834"
+android:label="Device Test"
+android:name="com.sec.android.app.status.vibration_test
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+               <activity
+                     android:theme="@16973834"
+android:label="MelodyTest"
+android:name="com.sec.android.app.status.melody_test"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"           android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834
+              android:label="SoundSourceTest" android:name="com.sec.android.app.status.SoundSourceTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/><activity
+android:theme="@2131624206"
+android:label="Touch screen version"
+android:name="com.sec.android.tspkeystring.keystring.touch_firmware"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:process="android.uid.system"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation|screenSize"/><activityandroid:theme="@2131624206"android:label="Touch sensity test"android:name="com.sec.android.app.status.PointerLocation"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING" 
+android:screenOrientation="portrait"/>
+                                      <activity
+                    android:theme="@2131624206"
+android:label="Proximity_test"
+android:name="com.sec.android.app.status.Proximity_test"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="RAM version"
+android:name="com.sec.android.app.status.ram_check"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@2131624206"
+android:label="Device Test"
+android:name="com.sec.android.app.status.ChargingTemperatureControl"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:process="android.uid.system" 
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@2131624206"
+android:label="Device Test"
+android:name="com.sec.android.app.status.BatteryMiscMode"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:process="android.uid.system"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="Mdnie Test"
+android:name="com.sec.android.app.status.Mdnie  Test"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+   android:process="android.uid.system"
+   android:screenOrientation="portrait"/>
+   <activity
+  android:theme="@16973834"
+   android:label="Test Mode"
+android:name="com.sec.android.app.status.Proximity_offset"android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="Test Mode"
+android:name="com.sec.android.app.status.Iris_proximity"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="Test Mode"
+android:name="com.sec.android.app.status.Proximity_color"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="AP Chip test"
+android:name="com.sec.android.app.status.AP_chip_test"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity
+android:theme="@16973834"
+android:label="AP Chip test"
+android:name="com.sec.android.app.status.AP_chip_test_Qualcomm"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING
+android:screenOrientation="portrait"/>
+<activity android:label="@2131558439"
+android:name="com.sec.android.app.status.SecureJT"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<activity android:theme="@2131624208"
+android:label="Information"
+android:name="com.sec.android.app.status.ShowCountryCertInfo"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:screenOrientation="portrait">
+<intent-filter>
+<action android:name="android.intent.action.MAIN"/>
+<category android:name="android.intent.category.DEVELOPMENT_PREFERENCE"/>
+</intent-filter></activity><activity
+android:theme="@16973836"
+android:label="IRIS Test mode"
+android:name="com.sec.android.app.status.IrisSetting"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/>
+<service android:name="com.sec.android.app.status.ModuleAudioService"/>
+<service android:name="com.sec.android.app.status.AlwaysOnDisplayService"/><activity
+android:label="PCmDump"
+android:name="com.sec.android.app.status.PCMDump"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"/><activity
+android:theme="@16973836"
+android:label="@2131558519"
+android:name="com.sec.android.tspkeystring.keystring.GloveSetting"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity android:theme="@16973836"
+android:label="@2131558519"
+android:name="com.sec.android.tspkeystring.keystring.TspResult"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973836"
+android:label="@2131558519"
+android:name="com.sec.android.tspkeystring.keystring.TspTestMode"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.tspkeystring.keystring.TspHoverAccuracyPoint"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.tspkeystring.keystring.TspSideTouchTest"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:label="@2131558432"
+android:name="com.sec.android.app.status.CoreCTRL"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:exported="false"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/><activity
+android:theme="@16973934"
+android:label="@2131558484"
+android:name="com.sec.android.app.status.WiFiStressTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity
+android:theme="@2131624208"
+android:name="com.sec.android.app.status.GripSensorCalibrationEntryNew"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationTouchIC"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/><activity android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationTouchIC_A96T316"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationASPxx"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activityandroid:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationADxxxx"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity
+android:theme="@16973838"android:name="com.sec.android.app.status.GripSensorCalibrationSXxxxx"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationSXxxxx_CP"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationSXxxxxNew"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTest_Antenna"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTest_CP"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTestDouble"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/>
+<activity android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTestNew"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTestLnB"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc
+|keyboardHidden|orientation|screenSize"
+/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorInitialWorkingTestTouch"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationCalScreen"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorTest2"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/>
+<activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorTest2_CP"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.GripSensorCalibrationDoubleSXxxxx"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.receiverSpeakerTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard|
+keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.DualChargingMode"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.CCIC_LPM"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard|
+keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.LPM"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.entry.MCDTestPasswordAlertDialog"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.McdTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.McdTestEntry"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.LcdPatternSeamless"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard|keyboardHidden|orientation"/>
+<activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.RangingSensorData"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard
+|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.BypassMode"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboard|keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.KeylessTestMode"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.KeylessCalibration"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.KeylessPressTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden
+|orientation"/><activity android:theme="@16973838"
+android:name="com.sec.android.app.status.KeylessNormalTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.KeylessRawData"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.KeylessUserTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.HandWriteHwPartInformList"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.HandWriteHwPartInform"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.ColourBalance"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@16973838"
+android:name="com.sec.android.app.status.ColourBalanceEntry"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@2131624207"
+android:name="com.sec.android.app.status.ShowProtoTypeSerialNumber"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@2131624208"
+android:name="com.sec.android.tspkeystring.keystring.TspGhostTouchTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@2131624208"
+android:name="com.sec.android.tspkeystring.keystring.ProximityTouchSensingTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@2131624208"
+android:name="com.sec.android.tspkeystring.keystring.TspAgingTest"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@2131624208"
+android:name="com.sec.android.tspkeystring.keystring.TouchSensitivityMeasurement"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardHidden|orientation"/><activity
+android:theme="@2131624208"
+android:name="com.sec.android.tspkeystring.keystring.TouchSensitivityMeasurementNew"
+android:permission="com.sec.android.app.factorymode.permission.KEYSTRING"
+android:screenOrientation="portrait"
+android:configChanges="keyboardH
