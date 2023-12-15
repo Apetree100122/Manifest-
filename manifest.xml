@@ -1,0 +1,57 @@
+
+<?xml version: ( '1' ) encoding: ( 'utf-16' ) ?>
+<manifestxmlns:android: "(http://schemas.android.com/apk/res/android)
+<android:version Code:( 4.5 )
+<android:version:Name:( 4.5 );
+<android:compile:Sdk Version= ( 7 );" 
+<androidcompile: SdkVersion Codename: FOURTEEN ( '14 )
+  <package:com.samsung.android.kmx service
+<platform_Build:VersionCode: ( 6 , 7 )>
+<uses_sdk:android:minSdkVersion: ( 6 )
+<android:targetSdkVersion: ( 7 ) />
+<uses-permission android:name: com.samsung.security.fabric.crypto.permission.KNOX_MATRIX />
+    <uses-permission android:name="android.permission.ACCESS_KEYGUARD_SECURE_STORAGE"/>
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    <uses-permission android:name="com.samsung.android.security.permission.SAMSUNG_KEYSTORE_PERMISSION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.samsung.android.permission.WRITE_SCPM"/>
+    <uses-permission android:name="com.samsung.android.permission.READ_SCPM"/>
+    <uses-permission android:name="android.permission.REQUEST_PASSWORD_COMPLEXITY"/>
+    <permission android:name="com.samsung.android.kmxservice.permission.ESCROW_VAULT_SERVICE" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="com.samsung.android.samsungaccount.permission.ACCOUNT_MANAGER"/>
+    <permission android:name="com.samsung.android.kmxservice.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.samsung.android.kmxservice.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application android:theme="@style/Theme.KmxService" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="false" android:supportsRtl="true" android:extractNativeLibs="false" android:fullBackupContent="false" android:roundIcon="@mipmap/ic_launcher_round" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:requestLegacyExternalStorage="true">
+        <activity android:theme="@style/Theme.AppCompat.DayNight" android:label="@string/app_name" android:name="com.samsung.android.kmxservice.MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <provider android:name="com.samsung.android.kmxservice.e2ee.E2EEContentProvider" android:exported="true" android:authorities="com.samsung.android.kmxservice"/>
+        <uses-library android:name="FabricCryptoLib" android:required="false"/>
+        <service android:name="com.samsung.android.kmxservice.escrowvault.EscrowAgent" android:permission="com.samsung.android.kmxservice.permission.ESCROW_VAULT_SERVICE" android:exported="true">
+            <intent-filter>
+                <action android:name="com.samsung.android.kmxservice.escrowvault.EV_SERVICE"/>
+                <action android:name="com.samsung.android.kmxservice.escrowvault.UPDATE_VERIFIER"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.samsung.android.kmxservice.escrowvault.ppp.VerifyPppActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.samsung.android.kmxservice.escrowvault.ppp.PppDelegateActivity" android:excludeFromRecents="true" android:screenOrientation="portrait"/>
+        <uses-library android:name="samsungkeystoreutils" android:required="false"/>
+        <receiver android:name="com.samsung.android.kmxservice.escrowvault.SamsungAccountReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.samsung.account.SAMSUNGACCOUNT_SIGNIN_COMPLETED"/>
+                <action android:name="com.samsung.account.SAMSUNGACCOUNT_SIGNOUT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.samsung.android.kmxservice.androidx-startup">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+        </provider>
+        <meta-data android:name="SPDE.build.signature
+             android:value=35871d926c5e84ceff100671ed5d43ff5e602033
+    </123366388/release/
+        KmxService-123000-1.1.01"/>
+        <meta-data  android:name="SPDE.env.version/android:value="8.0.2/G34.1.13/1.1.4"/>
+    </application>
+</manifest>
