@@ -1,0 +1,701 @@
+
+{$ "schema:https://schema.management.azure.com
+/schemas/2019-04-01/deploymentTemplate.json
+#,contentVersion":  3,
+"parameters": 
+{"extensions_IaaSAntimalware_Paths": {"type":"SecureString"},"extensions_IaaSAntimalware_Extensions"	{"type": "SecureString"},
+"extensions_IaaSAntimalware_Processes":
+{"type":"SecureString"},"virtualMachines_Stained_name":
+{"defaultValue":
+"Stained",
+"type":"String"},
+ "networkInterfaces_stained765_name":
+ { "defaultValue":
+	"stained 765",
+ "type":	"String"},"publicIPAddresses_Stained_ip_name":
+				{ "defaultValue":
+		"Stained-ip",
+            "type": 
+				"String"},
+        "virtualNetworks_Stained_vnet_name": {
+            "defaultValue": 
+					"Stained-vnet",
+              "type":
+	       "String"},
+        "storageAccounts_sharddiag486_name": {
+            "defaultValue": 
+						"sharddiag486",
+            "type": "String"},
+    "storageAccounts_shardperfdiag193_name": {
+           "defaultValue": 
+			"shardperfdiag193",
+        	"type":
+						"String"},        "bastionHosts_Stained_vnet_bastion_name": {
+      "defaultValue":
+			"Stained-vnet-bastion",
+            "type": 
+						"String" },     "networkSecurityGroups_Stained_nsg_name": {
+            "defaultValue": 
+					"Stained-nsg",
+            "type":			"Strings},
+						publicIPAddresses_Stained_vnet_ip_name: 
+			{	"defaultValue": "Stained-vnet-ip",
+      
+						"type": "String"},
+    metricAlerts_Percentage_CPU___Stained_name": {"defaultValue": 
+  "Percentage CPU - Stained",
+            "type":
+					"String"},	"metricAlerts_VM_Availability ___ Stained_name": {"defaultValue": 
+		 "VM Availability - Stained","type":
+				"String" }, "actionGroups  Recommended Alert Rules 
+		_ AG_1_name": {  "defaultValue": "RecommendedAlertRules-AG-1",
+            "type": "String" },        "metricAlerts_Network_In_Total ___ Stained_name": { "defaultValue": 
+						"Network 	In Total - Stained",
+            "type": "String" },
+        "metricAlerts_Network_Out_Total ___ Stained_name": {"defaultValue":  
+"Network Out Total - Stained",
+  "type": "String"},      "metricAlerts_Available_Memory_Bytes ___ Stained_name": {
+            "defaultValue": "Available Memory Bytes - Stained",
+            "type": "String"
+        },
+        "metricAlerts_OS_Disk_IOPS_Consumed_Percentage___Stained_name": {
+            "defaultValue": "OS Disk IOPS Consumed Percentage - Stained",
+            "type": "String"
+        },
+        "metricAlerts_Data_Disk_IOPS_Consumed_Percentage___Stained_name": {
+            "defaultValue": "Data Disk IOPS Consumed Percentage - Stained",
+            "type": "String"
+        },
+        "systemTopics_shardperfdiag193_34985cd4_29af_4955_9bbf_30725baa3f03_name": {
+            "defaultValue": "shardperfdiag193-34985cd4-29af-4955-9bbf-30725baa3f03",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": ["type": "microsoft.insights/actionGroups",
+            "apiVersion": "2023-01-01",
+            "name": "[parameters('actionGroups_RecommendedAlertRules_AG_1_name')]",
+            "location": "Global",
+            "tags": {
+                "83968350": "1000",
+                "48E2E74D21E4D74F": "1000",
+                "038811634763": "2",
+                "1681196997174": "2",
+                "1681829024810": "102"},						"properties": "groupShortName":   		  "recalert1", "enabled":	true,         "emailReceivers": [{        				    	  "name":"Email_EmailAction-", "emailAddress": "Apetree1001@email.phoenix.edu",
+"useCommonAlertSchema": true }
+    ],"smsReceivers": [],
+     "webhookReceivers": [],
+    "eventHubReceivers": [],
+        "itsmReceivers": [],
+   "azureAppPushReceivers": [], "automationRunbookReceivers": [],
+                "voiceReceivers": [],
+                "logicAppReceivers": [],                "azureFunctionReceivers":            "armRoleReceivers": []  }},{"type": "Microsoft.Network/networkSecurityGroups",
+ "apiVersion": "2022-11-01",
+ "name"[parameters('networkSecurityGroups _Stained_nsg_name')]",
+"location": 
+"westus",
+"tags": { "Alexander Petree ": "0",                "Apetree1001@email.phoenix.edu": "2" },
+       "properties": {
+          "securityRules": [
+                    {"name": "AllowAnyCustom8080Inbound",  "id": "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_Stained_nsg_name'), 'AllowAnyCustom8080Inbound')]",
+                        "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                        "properties": {
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "8080",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 1010,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "default-allow-rdp",
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_Stained_nsg_name'), 'default-allow-rdp')]",
+                        "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                        "properties": {
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 1002,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    },
+                    {
+                        "name": "MicrosoftDefenderForCloud-JITRule_1988471376_B0DB1BFBE78549F0AEC902E5B073AA09",
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_Stained_nsg_name'), 'MicrosoftDefenderForCloud-JITRule_1988471376_B0DB1BFBE78549F0AEC902E5B073AA09')]",
+                        "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                        "properties": {
+                            "description": "MDC JIT Network Access rule for policy 'default' of VM 'Stained'.",
+                            "protocol": "*",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "10.1.0.4",
+                            "access": "Deny",
+                            "priority": 1001,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    } {
+                        "name": "WACRule",
+                        "id": "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_Stained_nsg_name'), 'WACRule')]"                       "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                        "properties": 
+						 
+			 "description": "Allow WAC",                          "protocol": "Tcp",
+                            "sourcePortRange": "*"                          "destinationPortRange": "443",                        "sourceAddressPrefix": "*"                        "destinationAddressPrefix": "WindowsAdminCenter",
+	"access": "Allow"
+			
+	 "priority": 400,
+                          
+	"direction": "Outbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                        }
+                    }
+                ]
+            }
+        },
+        {   "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2022-11-01",
+            "name": "[parameters('publicIPAddresses_Stained_ip_name')]",
+            "location": "westus",
+            "tags": {
+                "Alexander Petree ": "0",
+                "Apetree1001@email.phoenix.edu": "2",
+                "alexander@alexander.omnimicrosoft.com": "1000"
+            },
+            "sku": {
+                "name": "Standard",
+                "tier": "Regional"
+            },
+            "properties": {
+                "ipAddress": "20.59.108.30",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "discoverlearning",
+                    "fqdn": "discoverlearning.westus.cloudapp.azure.com"
+                },
+                "ipTags": [],
+                "ddosSettings": {
+                    "protectionMode": "VirtualNetworkInherited"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2022-11-01",
+            "name": "[parameters('publicIPAddresses_Stained_vnet_ip_name')]",
+            "location": "westus",
+            "sku": {
+                "name": "Standard",
+                "tier": "Regional"
+            },
+            "properties": {
+                "ipAddress": "20.237.212.127",
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Static",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2022-11-01",
+            "name": "[parameters('virtualNetworks_Stained_vnet_name')]",
+            "location": "westus",
+            "tags": {
+                "Alexander Petree ": "0",
+                "Apetree1001@email.phoenix.edu": "2",
+                "alexander@alexander.omnimicrosoft.com": "1000"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.1.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "default",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Stained_vnet_name'), 'default')]""properties": {
+                            "addressPrefix": "10.1.0.0/24",
+                       "serviceEndpoints": [
+                                                                    "service": "Microsoft.Storage.Global",                                   "locations": [
+                                        "*"                                       }                         ],          "delegations": [],             "privateEndpointNetworkPolicies": "Disabled",
+                            "privateLinkServiceNetworkPolicies": "Enabled"
+                        },
+                        "type": "Microsoft.Network/virtualNetworks/subnets"
+                    },
+                    {
+                        "name": "AzureBastionSubnet",
+                        "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Stained_vnet_name'), 'AzureBastionSubnet')]",
+                        "properties": {                            "addressPrefix": "10.1.1.0/26",
+                            "delegations": [],
+                            "privateEndpointNetworkPolicies": "Disabled",
+                            "privateLinkServiceNetworkPolicies": "Enabled"
+                        },
+                        "type": "Microsoft.Network/virtualNetworks/subnets"
+                    }
+                ],
+                "virtualNetworkPeerings": [],
+                "enableDdosProtection": false
+            }
+        },
+        {            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2022-09-01"        "name": "[parameters('storageAccounts_sharddiag486_name')]",        "location": "westus",
+  "tags":                 "Alexander Petree ": "0",
+                "Apetree1001@email.phoenix.edu": "2"
+            },
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },    "kind": "Storage",
+            "properties": {
+                "minimumTlsVersion": "TLS1_2",
+                "allowBlobPublicAccess": true,
+                "networkAcls": {
+                    "resourceAccessRules": [ { "tenantId": "47ea4cec-fe0f-48f5-9a09-a2f957278304":                            "resourceId": "/subscriptions/33af1e61-072c-48f1-bd41-b60da094e056/providers/Microsoft.Security/datascanners/StorageDataScanner"
+                        }
+                    ],
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                    "file": {
+                            "keyType": "Account",
+                            "enabled": true
+                        },
+                        "blob": {
+                            "keyType": "Account",
+                            "enabled": true                       }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2022-09-01",
+            "name": "[parameters('storageAccounts_shardperfdiag193_name')]",
+            "location": "westus",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"            },
+            "kind": "StorageV2",
+            "properties": {
+                "minimumTlsVersion": "TLS1_0",
+                "allowBlobPublicAccess": true,
+                "networkAcls": {
+                    "resourceAccessRules"                        {
+                            "tenantId": "47ea4cec-fe0f-48f5-9a09-a2f957278304",
+                            "resourceId": "/subscriptions/33af1e61-072c-48f1-bd41-b60da094e056/providers/Microsoft.Security/datascanners/StorageDataScanner"                }
+                    ],
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "keyType": "Account",
+                            "enabled": true
+                        },
+                        "blob": {
+                            "keyType": "Account",
+                            "enabled": true
+                        }                 },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "2023-03-01"            "name": "[concat(parameters('virtualMachines_Stained_name'), '/IaaSAntimalware')]",
+            "location": "westus",
+            "dependsOn":                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"           ],            "properties": {
+              			"autoUpgradeMinorVersion": "true,                "publisher": "Microsoft.Azure.Security",
+                "type": "IaaSAntimalware            typeHandlerVersion:"1.3,settings": { AntimalwareEnabled: true            RealTimeProtectionEnabled": true,
+                    "ScheduledScanSettings": {
+                        "isEnabled": true,
+                        "scanType": "Quick",           "day": "7",
+                        "time": "120"      },
+                    "Exclusions": {                     "Paths": "[parameters('extensions_IaaSAntimalware_Paths')]",
+                        "Extensions": "[parameters('extensions_IaaSAntimalware_Extensions')]",             "Processes": "[parameters('extensions_IaaSAntimalware_Processes')]"         }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.EventGrid/systemTopics",
+            "apiVersion": "2022-06-15",
+            "name": "[parameters('systemTopics_shardperfdiag193_34985cd4_29af_4955_9bbf_30725baa3f03_name')]",
+            "location": "westus",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_shardperfdiag193_name'))]"
+            ],
+            "properties": {               "source": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_shardperfdiag193_name'))]",                "topicType": "microsoft.storage.storageaccounts"
+            }
+        },    {           "type": "Microsoft.EventGrid/systemTopics/eventSubscriptions",
+            "apiVersion": "2022-06-15",
+            "name": "[concat(parameters('systemTopics_shardperfdiag193_34985cd4_29af_4955_9bbf_30725baa3f03_name'), '/StorageAntimalwareSubscription')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventGrid/systemTopics', parameters('systemTopics_shardperfdiag193_34985cd4_29af_4955_9bbf_30725baa3f03_name'))]"   ],
+            "properties": {              "destination": {
+                    "properties": {                     "maxEventsPerBatch": 1,
+                        "preferredBatchSizeInKilobytes": 64,
+                        "azureActiveDirectoryTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",                "azureActiveDirectoryApplicationIdOrUri": "f1f8da5f-609a-401d-85b2-d498116b7265"
+                    },
+                    "endpointType": "WebHook"    },
+                "filter": {
+                    "includedEventTypes": [                  "Microsoft.Storage.BlobCreated"
+                    ],
+                    "advancedFilters": [
+                        {
+                            "values": [                      "BlockBlob"
+                            ],
+                            "operatorType": "StringContains",
+                            "key": "data.blobType"
+                        }
+                    ]
+                },
+                "eventDeliverySchema": "EventGridSchema",
+                "retryPolicy":                     "maxDeliveryAttempts": 30,
+                    "eventTimeToLiveInMinutes": 1440          }
+            }
+        }{
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "apiVersion": "2022-11-01",
+            "name": "[concat(parameters('networkSecurityGroups_Stained_nsg_name'), '/AllowAnyCustom8080Inbound')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Stained_nsg_name'))]"],
+            "properties": {
+                "protocol": "*",                "sourcePortRange": "*",
+                "destinationPortRange": "8080",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 1010,
+                "direction": "Inbound",
+                "sourcePortRanges": []          "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",            "apiVersion": "2022-11-01",
+            "name": "[concat(parameters('networkSecurityGroups_Stained_nsg_name'), '/default-allow-rdp')]",            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Stained_nsg_name'))]"  ],
+            "properties": {
+                "protocol": "TCP",
+                "sourcePortRange": "*",
+                "destinationPortRange": "3389",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix":"*",
+                "access": "Allow",
+                "priority": 1002,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            }
+        },
+                  "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "apiVersion": "2022-11-01"         "name": "[concat(parameters('networkSecurityGroups_Stained_nsg_name'), '/MicrosoftDefenderForCloud-JITRule_1988471376_B0DB1BFBE78549F0AEC902E5B073AA09')]",
+            "dependsOn": [                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Stained_nsg_name'))]"            ],
+            "properties": {
+                "description": "MDC JIT Network Access rule for policy 'default' of VM 'Stained'.",             "protocol": "*",
+                "sourcePortRange": "*",                "destinationPortRange": "3389",
+                "sourceAddressPrefix": "*",
+                "destinationAddressPrefix": "10.1.0.4",
+                "access": "Deny",
+                "priority": 1001,
+                "direction": "Inbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": []       "sourceAddressPrefixes": [],
+                "destinationAddressPrefixes": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "apiVersion": "2022-11-01",
+            "name": "[concat(parameters('networkSecurityGroups_Stained_nsg_name'), '/WACRule')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Stained_nsg_name'))]"         ],
+            "properties": {
+                "description": "Allow WAC",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "443",
+                "sourceAddressPrefix": "*",       "destinationAddressPrefix": "WindowsAdminCenter",
+                "access": "Allow",
+                "priority": 400,
+                "direction": "Outbound",
+                "sourcePortRanges": [],
+                "destinationPortRanges": [],
+                "sourceAddressPrefixes":                "destinationAddressPrefixes": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "apiVersion": "2022-11-01",
+            "name": "[concat(parameters('virtualNetworks_Stained_vnet_name'), '/AzureBastionSubnet')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_Stained_vnet_name'))]"
+            ],
+            "properties": {
+                "addressPrefix": "10.1.1.0/26",             "delegations": [],
+                "privateEndpointNetworkPolicies": "Disabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"        }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks/subnet"
+						"apiVersion": "2022-11-01",
+            "name": "[concat(parameters('virtualNetworks_Stained_vnet_name'), '/default')]",
+        "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks, parameters('virtualNetworks_Stained_vnet_name'))]"  ],
+            "properties": {
+                "addressPrefix": "10.1.0.0/24",
+              "serviceEndpoints": [          ]                        "service": "Microsoft.Storage.Global",
+                        "locations": [
+                            "*"            ]
+                    }],       "delegations": [],
+  "privateEndpointNetworkPolicies": "Disabled",
+                "privateLinkServiceNetworkPolicies": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2023-03-01",
+            "name": "[parameters('virtualMachines_Stained_name')]",
+            "location": "westus",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_stained765_name'))]",
+                "[resourceId('Microsoft.Storage/StorageAccounts'" parameters('storageAccounts_sharddiag486_name'))]"  ],
+            "tags": {
+                "Alexander Petree ": "0",           "Apetree1001@email.phoenix.edu": "2",          "    "alexander@alexander.omnimicrosoft.com": "1000"       },         "identity": {
+                "type": "SystemAssigned"      },
+            "properties": {              "hardwareProfile": {                "vmSize": "Standard_D2as_v4"
+                },
+                "storageProfile": {
+                    "imageReference":                    "publisher": "MicrosoftWindowsServer",                      "offer": "WindowsServer",           "sku": "2022-datacenter-core-g2",    "version": "latest"
+                    },
+ "osDisk":   "osType": "Windows",     "name": "[concat(parameters('virtualMachines_Stained_name'), '_OsDisk_1_a77c62b490b041519827c317af32e277')]",  "createOption": "FromImage ,caching": "ReadWrite",
+  "managedDisk": {   "id": [resourceId('Microsoft.Compute/disks',concat(parameters('virtualMachines_Stained_name'), '_OsDisk_1_a77c62b490b041519827c317af32e277'))] 
+                        },"deleteOption": "Delete" },
+                    "dataDisks": [      {       "lun": 0,                         "name": "[concat(parameters('virtualMachines_Stained_name'), '_DataDisk_2')]",                          "createOption": "Attach",
+                         "caching": "ReadOnly",
+                            "writeAcceleratorEnabled": false,                       "managedDisk": {
+                                "id": "[resourceId('Microsoft.Compute/disks', concat(parameters('virtualMachines_Stained_name'), '_DataDisk_2'))]"                    },                         "deleteOption": "Delete",                           "toBeDetached": false
+                        }                  ],
+                    "diskControllerType": "SCSI"
+                },           "osProfile": {                "computerName": "[parameters('virtualMachines_Stained_name')]"            "adminUsername": "Apetree1001"                  "windowsConfiguration": {
+                        "provisionVMAgent": true,                      "enableAutomaticUpdates": true,
+                        "patchSettings": {                         "patchMode": "AutomaticByOS",                 "assessmentMode": "ImageDefault",                           "enableHotpatching": false                      }                      "enableVMAgentPlatformUpdates": false
+                    },                  "secrets": [],
+                    "allowExtensionOperations": true,
+requireGuestProvisionSignal": true
+                },      "securityProfile": {
+                    "uefiSettings": {
+                  "secureBootEnabled": true"vTpmEnabled": true
+							},									
+"securityType": "TrustedLaunch"
+{                }             "networkProfile":                    "networkInterfaces": [
+                        {
+    
+									"id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_stained765_name'))]",    "properties":                              "deleteOption": "Delete"} ]  }    "diagnosticsProfile":"bootDiagnostics": {enabled: true)"storageUri:[concat(https://"parameters('storageAccounts_sharddiag486_name' '.blob.core.windows.net/')]"} },
+"licenseType": "Windows_Server",  "priority": "Spot","evictionPolicy": "Deallocate", "billingProfile": {
+ "maxPrice": -1   }  {  "type": "microsoft.insights/metricAlerts","apiVersion": "2018-03-01"           "name": "[parameters('metricAlerts_Available_Memory_Bytes___Stained_name')]",
+            "location": "Global",          "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]",
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"
+            ]"tags": {
+                "83968350": "1000"            "48E2E74D21E4D74F": "1000",
+                "038811634763": "2"      "1681196997174": "2",      "1681829024810": "102"
+            },
+            "properties": {
+                "severity": 4,
+                "enabled": true,
+                "scopes": [
+                    "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"
+                ],
+                "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                                                 "alertSensitivity": "Medium",
+                            "failingPeriods":                                "numberOfEvaluationPeriods": 4,
+                                "minFailingPeriodsToAlert": 4
+                            },
+                            "name": "Metric1",
+                            "metricNamespace": "Microsoft.Compute/virtualMachines",
+                            "metricName": "Available Memory Bytes"                           "operator": "LessThan",
+      "timeAggregation": "Average",
+                            "criterionType": "DynamicThresholdCriterion"
+                        }              ]               "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"          },
+                "targetResourceType": "Microsoft.Compute/virtualMachines",
+                "actions": [                {
+                        "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]", "webHookProperties": {}
+                    } ]    }        { "type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01",
+            "name": "[parameters('metricAlerts_Data_Disk_IOPS_Consumed_Percentage___Stained_name')]",
+            "location": "Global",
+            "dependsOn": [                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]",              "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"
+            ],         "tags": {
+                "83968350": "1000",       "48E2E74D21E4D74F": "1000",
+                "038811634763": "2",
+                "1681196997174": "2",             "1681829024810": "102"
+            },
+            "properties": {
+                "severity": 4,
+                "enabled": true,
+                "scopes": [                   "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"
+                ],
+                "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {
+                          "alertSensitivity": "Medium",
+                            "failingPeriods": {
+                                "numberOfEvaluationPeriods": 4,
+                                "minFailingPeriodsToAlert": 4
+                            },
+                            "name": "Metric1",                          "metricNamespace": "Microsoft.Compute/virtualMachines",
+                           "metricName": "Data Disk IOPS Consumed Percentage",
+                       "operator": "GreaterThan",
+                            "timeAggregation": "Average",
+                            "criterionType": "DynamicThresholdCriterion"
+                        }
+           ],               "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+                },    "targetResourceType": "Microsoft.Compute/virtualMachines",
+                "actions": [   ]                    "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]",                 "webHookProperties"           }
+                ]
+            }
+        },
+                 "type": "microsoft.insights/metricAlerts"            "apiVersion": "2018-03-01",
+            "name": "[parameters('metricAlerts_Network_In_Total___Stained_name')]",
+            "location": "Global",         "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]",
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"
+         ],
+            "tags":       "83968350": "1000",           "48E2E74D21E4D74F": "1000",
+                "038811634763": "2"         "1681196997174": "2",
+                "1681829024810": "102"
+            }        "properties": {
+                "severity": 4,
+                "enabled": true,             "scopes": [
+                    "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"
+                ],
+                "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {
+                            "alertSensitivity": "Medium",
+                            "failingPeriods":                             "numberOfEvaluationPeriods": 4,                            "minFailingPeriodsToAlert": 4
+                            },                "name": "Metric1"                           "metricNamespace": "Microsoft.Compute/virtualMachines",
+                            "metricName": "Network In Total",                           "operator": "GreaterThan",													
+                            "timeAggregation": "Total",                         "criterionType": "DynamicThresholdCriterion"
+                        }                  ],
+                    "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+                },           "targetResourceType": "Microsoft.Compute/virtualMachines",               "actions": [                 {
+                        "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]",
+                        "webHookProperties": {}                }      ]
+            }
+        },        {
+            "type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01"            "name": "[parameters('metricAlerts_Network_Out_Total___Stained_name')]",
+            "location": "Global",
+            "dependsOn": [
+
+							 "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]",
+                "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"  ], "tags": {  "83968350": "1000",
+   "48E2E74D21E4D74F": "1000","038811634763": "2","1681196997174": "2","1681829024810": "102"
+}, "properties": {   "severity": 1,
+   "enabled": true, "scopes": [               "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"
+],"evaluationFrequency": "PT5M",  "windowSize": "PT5M",  "criteria": { "all-Of": [ {                          "alertSensitivity": "Medium",
+                            "failingPeriods":                         "numberOfEvaluationPeriods": 4,                             "minFailingPeriodsToAlert": 4
+                    },                        "name": "Metric1",                        "metricNamespace": "Microsoft.Compute/virtualMachines",
+
+												"metricName": "Network Out Total",                          "operator": "GreaterThan",
+                          "timeAggregation": "Total",                     "criterionType": "DynamicThresholdCriterion"                   ]                "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"            }          "targetResourceType": "Microsoft.Compute/virtualMachines","actions": [ {"actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"        "webHookProperties": {}} ]      }},
+   {"type": "microsoft.insights/metricAlerts",
+  "apiVersion": "2018-03-01"         "name": "[parameters('metricAlerts_OS_Disk_IOPS_Consumed_Percentage___Stained_name')]",
+"location": "Global",         "dependsOn": [
+                "[resourceId('Microsoft.Compute/virtualMachines',
+								parameters('virtualMachines_Stained_name'))]"              "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]" ]   "tags": {"83968350": "1000" "48E2E74D21E4D74F": "1000",
+	 "038811634763": "2",
+     "1681196997174": "2",
+  "1681829024810": "102"      }, "properties": {     "severity": 2        "enabled": true,  "scopes": [            "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"
+ ],    "evaluationFrequency": "PT5M",
+                "windowSize": "PT5M",
+                "criteria": {
+                    "allOf": [
+                        {                      "alertSensitivity": "Medium",
+                            "failingPeriods": {                       "numberOfEvaluationPeriods": 4           "minFailingPeriodsToAlert": 4 },
+                 "name": "Metric1"                   "metricNamespace": "Microsoft.Compute/virtualMachines",
+                            "metricName": "OS Disk IOPS Consumed Percentage"                          "operator": "GreaterThan",                          "timeAggregation": "Average",                         "criterionType": "DynamicThresholdCriterion"                                ],"odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"},  "targetResourceType": "Microsoft.Compute/virtualMachines", "actions": [
+                    {  "actionGroupId": "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]", "webHookProperties":}]    { } },      {"type": "microsoft.insights/metricAlerts",
+            "apiVersion": "2018-03-01"  "name": "[parameters('metricAlerts_Percentage_CPU___Stained_name')]",        "location": "Global",        "dependsOn": [               "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]",      "[resourceId('microsoft.insights/actionGroups', parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]" ],  "tags": {  "83968350": "1000", "48E2E74D21E4D74F": "1000"  "038811634763": "2",
+"1681196997174": "2",     "1681829024810": "102"}    "properties": {   "severity": 4,    "enabled": true              "scopes": [
+                    "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]" ],"evaluationFrequency": "PT5M",  "windowSize": "PT5M",
+                "criteria": "allOf": [  {"alertSensitivity": "Medium",
+                            "failingPeriods": {
+    "numberOfEvaluationPeriods": 4,
+                                "minFailingPeriodsToAlert": 4                     },             "name": "Metric1",  "metricNamespace": "Microsoft.Compute/virtualMachines"                         "metricName": "Percentage CPU",                          "operator": "GreaterThan",
+                            "timeAggregation": "Average",  "criterionType": "DynamicThresholdCriterion" } ],"odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"          },                "targetResourceType": "Microsoft.Compute/virtualMachines",          "actions": [                 { "actionGroupId": "[resourceId('microsoft.insights/actionGroups',parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]",                        "webHookProperties": { }  }},
+        {           "type": "microsoft.insights/metricAlerts",         "apiVersion": "2018-03-01           "name": "[parameters('metricAlerts_VM_Availability___Stained_name')]"     "location": "Global",
+            "dependsOn": [                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]",                "[resourceId('microsoft.insights/actionGroups' parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]"       ]       "properties": { "severity": 4     "enabled": true,  "scopes": [                 "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_Stained_name'))]"   ], "evaluationFrequency": "PT5M",  "windowSize": "PT5M",
+                "criteria": {    "allOf": {                           "alertSensitivity": "Medium",  "failingPeriods": {                             "numberOfEvaluationPeriods": 4,                              "minFailingPeriodsToAlert": 4}, "name": "Metric1                         "metricNamespace": "Microsoft.Compute/virtualMachines" :                       "metricName": "VmAvailabilityMetric",
+  "operator": "LessThan",                       "timeAggregation": "Average","criterionType": "DynamicThresholdCriterion"}],"odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"},
+"targetResourceType": "Microsoft.Compute/virtualMachines",   "actions": [  { "actionGroupId": "[resourceId('microsoft.insights/actionGroups',parameters('actionGroups_RecommendedAlertRules_AG_1_name'))]","webHookProperties"{}} ]
+            }}, {"type": "Microsoft.Network/bastionHosts",
+"apiVersion": "2022-11-01"     "name": "[parameters('bastionHosts_Stained_vnet_bastion_name')]", "location": "westus",   "dependsOn":                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_Stained_vnet_ip_name'))]",              "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Stained_vnet_name'), 'AzureBastionSubnet')]"  ],  "sku": {
+ "name": "Basic" }, "properties": {"dnsName": "bst-3af1988a-39d0470b-a200-2632ad54abfc.bastion.azure.com","scaleUnits": 2,  "enableTunneling": false, "enableIpConnect": false,"disableCopyPaste": false,
+"enableShareableLink": false,
+"enableKerberos": false,"ipConfigurations": [ {  "name": "IpConf", "id": "[concat(resourceId('Microsoft.Network/bastionHosts', parameters('bastionHosts_Stained_vnet_bastionname')), '/bastionHostIpConfigurations/IpConf')]","properties": {"privateIPAllocationMethod": "Dynamic",
+"publicIPAddress": { "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_Stained_vnet_ip_name'))]"
+                            },
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Stained_vnet_name),'AzureBastionSubnet')]" }
+                    }
+                ]
+            } },
+        {"type": "Microsoft.Network/networkInterfaces",   "apiVersion": "2022-11-01",
+"name": "[parameters('networkInterfaces_stained765_name')]",
+  "location": "westus",  "dependsOn": [         "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_Stained_ip_name'))]",             "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_Stained_vnet_name'), 'default')]",                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Stained_nsg_name'))]"  ],     "tags": {      "Alexander Petree ": "0",
+ "Apetree1001@email.phoenix.edu": "2"     },    "kind": "Regular" "properties": {
+   "ipConfigurations": [                   {   "name": "ipconfig1",                        "id": "[concat(resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_stained765_name')), '/ipConfigurations/ipconfig1')]",                        "etag": "W/\"44f37262-6807-4e74-a17c-c5d1787e516a\"",                       "type": "Microsoft.Network/networkInterfaces/ipConfigurations",                    "properties": {
+                         "provisioningState": "Succeeded",   													"privateIPAddress": "10.1.0.4",                         "privateIPAllocationMethod": "Dynamic",
+                          "publicIPAddress": {                              "name": "Stained-ip",                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_Stained_ip_name'))]",                                "properties": {                                  "provisioningState": "Succeeded",                                   "resourceGuid": "2c146ace-ef01-43bc-9e98-0c62c5c4d10e",                                 "publicIPAddressVersion": "IPv4",                                  "publicIPAllocationMethod": "Dynamic"                                    "idleTimeoutInMinutes": 4,                    "ipTags": [],                       "ipConfiguration": {"id":[concat(resourceId('Microsoft.Network/networkterfaces',parameters('networkInterfaces_stained765_name), '/ipConfigurations/ipconfig1')]"          "deleteOption": "Delete" },"type": "Microsoft.Network/publicIPAddresses",     "sku": {  "name": "Basic",                   	"tier":"Regional"}},
+"subnet": {"id": [resourceId('Microsoft.Network/virtualNetworks/subnets',parameters('virtualNetworks_Stained_vnet_name)'default')]"}, "primary": true,   "privateIPAddressVersion":"IPv4"}}],"dnsSettings":{}"dnsServers": []},    "enableAcceleratedNetworking": true,      			  	"enableIPForwarding": true,        "disableTcpStateTracking": 	true,   "networkSecurityGroup": {
+"id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_Stained_nsg_name'))]"       },"nicType": "premium" }
+				}
+    ]
+}
