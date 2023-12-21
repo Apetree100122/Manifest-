@@ -48,7 +48,7 @@ jobs:
       # mode & send stacktraces back on "500 Internal Server Error" responses
 
       - name: Start your API
-        run: ./run_your_api.sh #500
+        run: ./run_your_api.sh 32
 
       - name: Mayhem for API
         uses: ForAllSecure/mapi-action@193b709971cc377675e33284aecbf9229853e010
